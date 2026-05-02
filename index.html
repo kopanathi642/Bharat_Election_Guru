@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharat Election Guru — Indian Election Education Assistant</title>
+  <meta name="description" content="An interactive educational assistant to learn about the Indian Election System — timelines, flashcards, quizzes, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">🗳️</span>
+        <span class="logo-text">Bharat <span class="accent">Election Guru</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#timeline" class="nav-link" data-section="timeline">Timeline</a></li>
+        <li><a href="#flashcards" class="nav-link" data-section="flashcards">Flashcards</a></li>
+        <li><a href="#quiz" class="nav-link" data-section="quiz">Quiz</a></li>
+        <li><a href="#info" class="nav-link" data-section="info">Learn More</a></li>
+        <li><a href="#assistant" class="nav-link" data-section="assistant">Assistant</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🇮🇳 Interactive Learning Platform</div>
+      <h1 class="hero-title">
+        Master the <span class="gradient-text">Indian Election</span> System
+      </h1>
+      <p class="hero-subtitle">
+        Explore the world's largest democracy through interactive timelines, flashcards, quizzes, and an AI-powered assistant. Understand every step — from voter registration to results declaration.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number" data-target="950">0</span><span class="stat-suffix">M+</span>
+          <span class="stat-label">Registered Voters</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="543">0</span>
+          <span class="stat-label">Lok Sabha Seats</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="28">0</span>
+          <span class="stat-label">States</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="8">0</span>
+          <span class="stat-label">Union Territories</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#timeline" class="btn btn-primary">Start Learning →</a>
+        <a href="#quiz" class="btn btn-secondary">Take Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TIMELINE ===================== -->
+  <section id="timeline" class="section">
+    <div class="section-header">
+      <span class="section-badge">📅 Step-by-Step</span>
+      <h2 class="section-title">The Indian Election <span class="gradient-text">Timeline</span></h2>
+      <p class="section-subtitle">Follow the complete journey of how India conducts its elections — from delimitation to the final results.</p>
+    </div>
+    <div class="timeline-container" id="timelineContainer">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ===================== FLASHCARDS ===================== -->
+  <section id="flashcards" class="section">
+    <div class="section-header">
+      <span class="section-badge">🃏 Interactive Cards</span>
+      <h2 class="section-title">Election <span class="gradient-text">Flashcards</span></h2>
+      <p class="section-subtitle">Click any card to flip and learn key concepts, terms, and processes of the Indian Election System.</p>
+    </div>
+    <div class="flashcard-controls">
+      <button class="btn btn-sm btn-secondary" id="prevCardBtn">← Previous</button>
+      <span class="card-counter" id="cardCounter">1 / 20</span>
+      <button class="btn btn-sm btn-secondary" id="nextCardBtn">Next →</button>
+      <button class="btn btn-sm btn-primary" id="shuffleBtn">🔀 Shuffle</button>
+    </div>
+    <div class="flashcard-grid" id="flashcardGrid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ===================== QUIZ ===================== -->
+  <section id="quiz" class="section">
+    <div class="section-header">
+      <span class="section-badge">🧠 Test Your Knowledge</span>
+      <h2 class="section-title">Election <span class="gradient-text">Quiz</span></h2>
+      <p class="section-subtitle">Challenge yourself with questions about the Indian Election System. How much do you really know?</p>
+    </div>
+    <div class="quiz-container" id="quizContainer">
+      <div class="quiz-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" id="quizProgressFill"></div>
+        </div>
+        <span class="progress-text" id="quizProgressText">Question 1 / 15</span>
+      </div>
+      <div class="quiz-question-card" id="quizQuestionCard">
+        <!-- Populated by JS -->
+      </div>
+      <div class="quiz-result-card hidden" id="quizResultCard">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INFO / LEARN MORE ===================== -->
+  <section id="info" class="section">
+    <div class="section-header">
+      <span class="section-badge">📚 Deep Dive</span>
+      <h2 class="section-title">Learn <span class="gradient-text">More</span></h2>
+      <p class="section-subtitle">Explore detailed information about key aspects of India's democratic process.</p>
+    </div>
+    <div class="info-tabs">
+      <button class="info-tab active" data-tab="types">Types of Elections</button>
+      <button class="info-tab" data-tab="bodies">Constitutional Bodies</button>
+      <button class="info-tab" data-tab="voting">Voting Process</button>
+      <button class="info-tab" data-tab="history">Key Milestones</button>
+    </div>
+    <div class="info-content" id="infoContent">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ===================== ASSISTANT ===================== -->
+  <section id="assistant" class="section">
+    <div class="section-header">
+      <span class="section-badge">🤖 Ask Anything</span>
+      <h2 class="section-title">Election <span class="gradient-text">Assistant</span></h2>
+      <p class="section-subtitle">Have a question about Indian elections? Ask our intelligent assistant and get instant answers.</p>
+    </div>
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message bot">
+          <div class="chat-avatar">🗳️</div>
+          <div class="chat-bubble">
+            <p>Namaste! 🙏 I'm your <strong>Bharat Election Guru</strong>. Ask me anything about the Indian election system — voter registration, EVM machines, election schedules, political parties, or any aspect of India's democracy!</p>
+            <div class="suggestion-chips">
+              <button class="chip" onclick="askSuggestion('Explain the complete election process step by step')">📋 Full Election Process</button>
+              <button class="chip" onclick="askSuggestion('How do I register to vote?')">How to register?</button>
+              <button class="chip" onclick="askSuggestion('What is an EVM?')">What is an EVM?</button>
+              <button class="chip" onclick="askSuggestion('What is NOTA?')">What is NOTA?</button>
+              <button class="chip" onclick="askSuggestion('How are votes counted on result day?')">🔢 Counting Process</button>
+              <button class="chip" onclick="askSuggestion('How is the government formed after elections?')">🏛️ Government Formation</button>
+              <button class="chip" onclick="askSuggestion('What are the campaigning rules?')">📣 Campaign Rules</button>
+              <button class="chip" onclick="askSuggestion('How does a polling booth work?')">🗳️ Booth Operations</button>
+              <button class="chip" onclick="askSuggestion('What is the reservation system in elections?')">Reservation System</button>
+              <button class="chip" onclick="askSuggestion('What is One Nation One Election?')">One Nation One Election</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="chat-input-area" id="chatForm">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask about Indian elections..." autocomplete="off" />
+        <button type="submit" class="chat-send-btn" id="chatSendBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🗳️</span>
+        <span class="logo-text">Bharat <span class="accent">Election Guru</span></span>
+        <p class="footer-desc">An interactive educational platform to understand the Indian Election System.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#timeline">Timeline</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#info">Learn More</a>
+        <a href="#assistant">Assistant</a>
+      </div>
+      <div class="footer-bottom">
+        <p>Made with ❤️ for Indian Democracy • Educational Purposes Only</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
